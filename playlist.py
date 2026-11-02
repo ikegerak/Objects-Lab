@@ -5,9 +5,9 @@ class Song:
         self.length = int(length)
         
 class Playlist:
-    songs = {}
     def __init__(self,playlist):
         self.title = playlist
+        self.songs = {}
 
     def load_songs(self,list):
         with open(list, "r") as f:
@@ -20,7 +20,7 @@ class Playlist:
             count += 1
 
     def add_song(self,song):
-        self.songs["song" + str(len(self.songs)+1)] = song
+        self.songs["song" + str(len(self.songs) + 1)] = song
 
     def print_playlist(self):
         print(f"{str(self.title).upper()}\n--------------------")
